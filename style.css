@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0a0e27;
+  --terminal-bg: #1a1d2e;
+  --terminal-border: #2d3250;
+  --text-primary: #00ff41;
+  --text-secondary: #8b949e;
+  --text-white: #e6edf3;
+  --prompt-color: #58a6ff;
+  --error-color: #ff6b6b;
+  --warning-color: #ffd93d;
+  --header-bg: #161b22;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.terminal-container {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--terminal-bg);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 1px solid var(--terminal-border);
+}
+
+.terminal-header {
+  background: var(--header-bg);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.btn-close {
+  background: #ff5f56;
+}
+
+.btn-minimize {
+  background: #ffbd2e;
+}
+
+.btn-maximize {
+  background: #27c93f;
+}
+
+.terminal-title {
+  color: var(--text-secondary);
+  font-size: 14px;
+  flex: 1;
+  text-align: center;
+}
+
+.terminal-body {
+  padding: 20px;
+  min-height: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--terminal-border) transparent;
+}
+
+.terminal-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: var(--terminal-border);
+  border-radius: 4px;
+}
+
+.welcome-message {
+  margin-bottom: 20px;
+}
+
+.ascii-art {
+  color: var(--text-primary);
+  font-size: 10px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.welcome-message p {
+  color: var(--text-white);
+  margin: 10px 0;
+}
+
+.command-highlight {
+  color: var(--warning-color);
+  font-weight: bold;
+  padding: 2px 6px;
+  background: rgba(255, 217, 61, 0.1);
+  border-radius: 3px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prompt {
+  color: var(--prompt-color);
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-white);
+  font-family: inherit;
+  font-size: 16px;
+  caret-color: var(--text-primary);
+}
+
+.output-line {
+  margin: 8px 0;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.command-line {
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.command-line .prompt {
+  color: var(--prompt-color);
+}
+
+.command-line .user-command {
+  color: var(--text-white);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.success {
+  color: var(--text-primary);
+}
+
+.info {
+  color: var(--text-secondary);
+}
+
+.section-title {
+  color: var(--warning-color);
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  border-bottom: 1px solid var(--terminal-border);
+  padding-bottom: 8px;
+}
+
+.cv-section {
+  margin: 15px 0;
+}
+
+.cv-section h3 {
+  color: var(--prompt-color);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.cv-section p, .cv-section ul {
+  color: var(--text-white);
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.cv-section ul {
+  list-style: none;
+}
+
+.cv-section li::before {
+  content: "▸ ";
+  color: var(--text-primary);
+  margin-right: 8px;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.project-card {
+  background: rgba(45, 50, 80, 0.3);
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  padding: 15px;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateX(5px);
+  border-color: var(--text-primary);
+}
+
+.project-card h4 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.project-card .tech-stack {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--prompt-color);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.veille-item {
+  background: rgba(45, 50, 80, 0.3);
+  border-left: 3px solid var(--text-primary);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.veille-item h4 {
+  color: var(--warning-color);
+  margin-bottom: 8px;
+}
+
+.veille-item .date {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.veille-item p {
+  color: var(--text-white);
+  margin: 5px 0;
+}
+
+.veille-item a {
+  color: var(--prompt-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.veille-item a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.help-table {
+  margin: 15px 0;
+}
+
+.help-row {
+  display: flex;
+  margin: 8px 0;
+  padding: 8px;
+  background: rgba(45, 50, 80, 0.2);
+  border-radius: 4px;
+}
+
+.help-command {
+  color: var(--warning-color);
+  min-width: 200px;
+  font-weight: bold;
+}
+
+.help-description {
+  color: var(--text-white);
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .terminal-container {
+    border-radius: 8px;
+  }
+
+  .terminal-body {
+    padding: 15px;
+    min-height: 500px;
+  }
+
+  .ascii-art {
+    font-size: 8px;
+  }
+
+  .help-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .help-command {
+    min-width: auto;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
