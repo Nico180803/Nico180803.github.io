@@ -7,35 +7,45 @@ const commandHistory = [];
 let historyIndex = -1;
 
 const cvData = {
-  nom: "Votre Nom",
-  titre: "Développeur Full Stack",
-  email: "votre.email@example.com",
+  nom: "Charpentier",
+  titre: "Etudiant",
+  email: "nicolascharpentier1808@gmail.com",
   telephone: "+33 6 XX XX XX XX",
-  localisation: "Ville, France",
   competences: [
-    "HTML5, CSS3, JavaScript",
-    "React, Vue.js, Node.js",
+    "HTML5, CSS3,
     "Python, Java, PHP",
-    "Git, Docker, Linux",
-    "SQL, MongoDB, PostgreSQL"
+    "Git",
+    "SQL"
   ],
   formation: [
     {
-      annee: "2020-2023",
-      titre: "Master Informatique",
-      etablissement: "Université / École"
+      annee: "2024-2026",
+      titre: "BTS SIO option SLAM",
+      etablissement: "Robert Schuman"
     },
     {
-      annee: "2018-2020",
-      titre: "Licence Informatique",
-      etablissement: "Université"
+      annee: "2021-2024",
+      titre: "Licence science politique mention sociologie politique",
+      etablissement: "Université Sorbonne Paris Nord"
     }
   ],
   experience: [
     {
-      periode: "2023 - Présent",
+      periode: "Septembre 2025 - Juin 2026",
       poste: "Développeur Full Stack",
-      entreprise: "Entreprise XYZ",
+      type: "Apprentissage",
+      entreprise: "Ministère des Armées",
+      missions: [
+        "Développement d'applications web",
+        "Maintenance et optimisation du code",
+        "Travail en équipe agile"
+      ]
+    },
+        {
+      periode: "Mai 2025 - Juillet 2025",
+      poste: "Développeur Full Stack",
+      type: "Stage",
+      entreprise: "Ministère des Armées",
       missions: [
         "Développement d'applications web",
         "Maintenance et optimisation du code",
@@ -52,27 +62,27 @@ const cvData = {
 const projetsData = [
   {
     id: 1,
-    titre: "Projet E-commerce",
-    description: "Plateforme de vente en ligne complète avec système de paiement sécurisé",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    titre: "Projet Gestion d'hopital",
+    description: "Plateforme de gestion d'un groupe hospitalier",
+    technologies: ["Symfony","Php","PhpMyAdmin", "Api REST"],
     lien: "#",
-    details: "Description détaillée du projet e-commerce..."
+    details: "Description détaillée du projet..."
   },
   {
     id: 2,
-    titre: "Application Mobile",
-    description: "Application de gestion de tâches avec synchronisation cloud",
-    technologies: ["React Native", "Firebase", "Redux"],
+    titre: "Appli Java",
+    description: "Application",
+    technologies: ["JavaFX", "Java", "PhpMyAdmin"],
     lien: "#",
-    details: "Description détaillée de l'application mobile..."
+    details: "Description détaillée du projet..."
   },
   {
     id: 3,
-    titre: "Dashboard Analytics",
-    description: "Interface d'analyse de données en temps réel",
-    technologies: ["Vue.js", "D3.js", "Python", "FastAPI"],
+    titre: "Hackaton - Nuit de l'info 2024",
+    description: "Projet réalisé en une nuit",
+    technologies: ["Php", "JavaScript", "PhpMyAdmin"],
     lien: "#",
-    details: "Description détaillée du dashboard..."
+    details: "La Nuit de l’Info est un hackathon national qui a eu lieu dans la nuit du 5 au 6 décembre 2024. Pendant une nuit entière, des équipes d’étudiants se réunissent pour concevoir, développer et livrer une application Web répondant à un thème imposé, resté secret jusqu’au départ. Dans notre cas, nous avions commencé notre cursus et l’apprentissage du développement seulement trois mois auparavant, ce qui a rendu le défi particulièrement stimulant et formateur pour toute l’équipe."
   }
 ];
 
