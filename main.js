@@ -12,7 +12,7 @@ const cvData = {
   email: "nicolascharpentier1808@gmail.com",
   telephone: "+33 6 XX XX XX XX",
   competences: [
-    "HTML5, CSS3,
+    "HTML5", "CSS3",
     "Python", "Java", "PHP",
     "Git",
     "SQL"
