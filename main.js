@@ -140,6 +140,10 @@ const commands = {
     <span class="help-command">about</span>
     <span class="help-description">À propos de ce portfolio</span>
   </div>
+  <div class="help-row">
+    <span class="help-command">home</span>
+    <span class="help-description">Retour à l'accueil</span>
+  </div>
 </div>
     `;
   },
@@ -289,6 +293,26 @@ ${veilleData.map(article => `
   <p>Tapez <span class="command-highlight">help</span> pour voir toutes les commandes disponibles.</p>
 </div>
     `;
+  },
+
+  home: () => {
+    output.innerHTML = '';
+    const welcomeHTML = `
+<div class="welcome-message">
+  <pre class="ascii-art">
+ ██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗
+ ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+ ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+ ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+ ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+ ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝
+  </pre>
+  <p>Bienvenue sur mon portfolio interactif!</p>
+  <p>Tapez <span class="command-highlight">help</span> pour voir les commandes disponibles.</p>
+</div>
+    `;
+    output.innerHTML = welcomeHTML;
+    return null;
   }
 };
 
