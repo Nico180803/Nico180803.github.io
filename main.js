@@ -1,4 +1,4 @@
-import './style.css'
+//import './style.css'
 
 const output = document.getElementById('output');
 const input = document.getElementById('terminal-input');
